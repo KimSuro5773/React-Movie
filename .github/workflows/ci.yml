@@ -47,6 +47,8 @@ jobs:
 
       # 5. TypeScript 타입 체크 및 Vite 빌드
       - name: Build project
+        env:
+          VITE_TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: npm run build
 
       # 6. GitHub Pages 설정

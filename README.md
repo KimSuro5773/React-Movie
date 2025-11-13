@@ -39,4 +39,4 @@ TMDB API를 활용한 영화 정보 제공 웹 사이트입니다.
 
 ## 🔗 배포 링크
 
-- 배포 URL: (배포 후 추가 예정)
+- 배포 URL: [React-Movie](https://kimsuro5773.github.io/React-Movie/)
