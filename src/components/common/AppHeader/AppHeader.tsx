@@ -1,7 +1,8 @@
 import { Menu, Search } from "lucide-react";
-import { Button, Input } from "../ui";
+import { Button, Input } from "../../ui";
 import AppSlider from "./AppSlider";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function AppHeader() {
   const [isSliderOpen, setIsSliderOpen] = useState<boolean>(false);
@@ -11,7 +12,9 @@ function AppHeader() {
       <header className="z-10 w-full flex items-center justify-center bg-[#121212]">
         <div className="w-full max-w-screen-2xl flex items-center justify-between px-6 py-3 gap-10">
           {/* Logo */}
-          <img src="./svg/react.svg" alt="LOGO" className="w-6 md:w-7" />
+          <Link to={"/"}>
+            <img src="./svg/react.svg" alt="LOGO" className="w-6 md:w-7" />
+          </Link>
 
           {/* SearchBar */}
           <div className="relative flex w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl">

@@ -1,5 +1,5 @@
 import { X } from "lucide-react";
-import { Button } from "../ui";
+import { Button } from "@/components/ui";
 import { SLIDER_ITEMS } from "@/constants/AppSliderConstants";
 import { Link, useLocation } from "react-router-dom";
 
@@ -28,7 +28,7 @@ function AppSlider({ isSliderOpen, onClose }: AppSliderProps) {
       >
         <div className="p-4 border-b flex justify-between items-center">
           <h2 className="text-lg font-bold">카테고리</h2>
-          <Button variant={"ghost"} size={"icon"} onClick={onClose}>
+          <Button variant={"ghost"} size={"icon"} onClick={onClose} aria-label="Close">
             <X />
           </Button>
         </div>
