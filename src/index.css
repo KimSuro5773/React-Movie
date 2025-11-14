@@ -118,3 +118,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .page {
+    @apply min-h-screen flex flex-col;
+  }
+
+  .main_container {
+    @apply flex-1 w-full max-w-screen-2xl mx-auto px-4 py-6;
+  }
+}
