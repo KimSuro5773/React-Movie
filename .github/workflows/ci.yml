@@ -26,36 +26,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. 저장소 코드 체크아웃
+      # 저장소 코드 체크아웃
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Node.js 환경 설정
+      # Node.js 환경 설정
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
 
-      # 3. 의존성 설치
+      # 의존성 설치
       - name: Install dependencies
         run: npm ci
 
-      # 4. ESLint 코드 검사
+      # ESLint 코드 검사
       - name: Run linter
         run: npm run lint
 
-      # 5. TypeScript 타입 체크 및 Vite 빌드
+      # 테스트 실행
+      - name: Run tests
+        run: npm run test
+
+      # TypeScript 타입 체크 및 Vite 빌드
       - name: Build project
         env:
           VITE_TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: npm run build
 
-      # 6. GitHub Pages 설정
+      # GitHub Pages 설정
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 7. 빌드된 파일 업로드
+      # 빌드된 파일 업로드
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
