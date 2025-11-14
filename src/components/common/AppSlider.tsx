@@ -22,7 +22,7 @@ function AppSlider({ isSliderOpen, onClose }: AppSliderProps) {
       ></div>
 
       <div
-        className={`bg-[#121212] fixed top-0 left-0 h-full w-64 z-50 transition-transform duration-300
+        className={`bg-[#121212] fixed top-0 left-0 h-full w-64 md:w-72 lg:w-80 xl:w-96 z-50 transition-transform duration-300
           ${isSliderOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
