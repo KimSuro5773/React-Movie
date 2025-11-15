@@ -30,8 +30,8 @@ TMDB API를 활용한 영화 정보 제공 웹 사이트입니다.
 
 ### 배포 & 자동화
 
-- [ x ] Github Pages 배포
-- [ x ] GitHub Actions CI/CD 파이프라인
+- [x] Github Pages 배포
+- [x] GitHub Actions CI/CD 파이프라인
 
 ## 📝 API
 
