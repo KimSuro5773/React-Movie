@@ -22,7 +22,7 @@ function AppSlider({ isSliderOpen, onClose }: AppSliderProps) {
       ></div>
 
       <div
-        className={`bg-[#121212] fixed top-0 left-0 h-full w-64 md:w-72 lg:w-80 xl:w-96 z-50 transition-transform duration-300
+        className={`bg-[#121212] fixed top-0 left-0 h-full w-64 md:w-72 lg:w-80 xl:w-96 z-50 transition-transform duration-300 flex flex-col
           ${isSliderOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
@@ -33,7 +33,7 @@ function AppSlider({ isSliderOpen, onClose }: AppSliderProps) {
           </Button>
         </div>
 
-        <nav className="p-4 flex flex-col gap-3 h-full space-y-3 my-5">
+        <nav className="py-12 px-4 flex flex-col gap-3 flex-1 space-y-3 overflow-y-auto">
           {SLIDER_ITEMS.map((item) => {
             const isActive = location.pathname === item.path;
 
@@ -42,8 +42,8 @@ function AppSlider({ isSliderOpen, onClose }: AppSliderProps) {
                 key={item.id}
                 to={item.path}
                 className={`flex items-center gap-3 rounded-full py-2 hover:bg-white/10 px-3 transition-colors duration-200 
-                  ${isActive ? " text-white" : "text-muted-foreground  hover:text-white"}
-                `}
+                    ${isActive ? " text-white" : "text-muted-foreground  hover:text-white"}
+                  `}
                 onClick={onClose}
               >
                 {item.icon}
