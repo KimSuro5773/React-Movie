@@ -23,7 +23,7 @@ export const getTopRatedMovies = async (page = 1): Promise<MovieListResponse> =>
   return data;
 };
 
-export const getUpcommingMovies = async (page = 1): Promise<MovieListResponse> => {
+export const getUpcomingMovies = async (page = 1): Promise<MovieListResponse> => {
   const { data } = await tmdbClient.get(END_POINTS.MOVIES.UPCOMING, {
     params: { page },
   });
