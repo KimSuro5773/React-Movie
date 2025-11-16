@@ -1,4 +1,4 @@
-import { MovieSection } from "@/components/movie";
+import { MovieSection, MovieSectionSkeleton } from "@/components/movie";
 import {
   useNowPlayingMovies,
   usePopularMovies,
@@ -15,7 +15,10 @@ function Home() {
 
   return (
     <div className="container mx-auto space-y-12 py-8">
-      {nowPlaying && (
+      {/* 현재 상영중 */}
+      {!nowPlaying ? (
+        <MovieSectionSkeleton />
+      ) : (
         <MovieSection
           titleHeader="현재 상영중"
           linkPath={PATHS.NOW_PLAYING}
@@ -23,11 +26,17 @@ function Home() {
         />
       )}
 
-      {popular && (
+      {/* TMDB 인기 */}
+      {!popular ? (
+        <MovieSectionSkeleton />
+      ) : (
         <MovieSection titleHeader="TMDB 인기" linkPath={PATHS.POPULAR} movies={popular.results} />
       )}
 
-      {topRated && (
+      {/* 최고 평점 */}
+      {!topRated ? (
+        <MovieSectionSkeleton />
+      ) : (
         <MovieSection
           titleHeader="최고 평점"
           linkPath={PATHS.TOP_RATED}
@@ -35,7 +44,10 @@ function Home() {
         />
       )}
 
-      {upcoming && (
+      {/* 개봉 예정 */}
+      {!upcoming ? (
+        <MovieSectionSkeleton />
+      ) : (
         <MovieSection titleHeader="개봉 예정" linkPath={PATHS.UPCOMING} movies={upcoming.results} />
       )}
     </div>
