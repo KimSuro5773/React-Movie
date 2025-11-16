@@ -11,5 +11,6 @@ export const tmdbClient = axios.create({
 
   params: {
     language: "ko-KR",
+    region: "KR",
   },
 });
