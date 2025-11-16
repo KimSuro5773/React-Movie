@@ -1,4 +1,4 @@
-import { AppHeader } from "./components/common";
+import { AppFooter, AppHeader } from "./components/common";
 import AppRoutes from "./routes/AppRoutes";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
         <AppRoutes />
       </main>
 
-      {/* AppFooter 들어갈 예정 */}
+      <AppFooter />
     </div>
   );
 }
