@@ -7,26 +7,27 @@ export const generatePageNumbers = (
     return Array.from({ length: totalPages }, (_, i) => i + 1);
   }
 
-  const pages: (number | "ellipsis")[] = [1];
+  const pages: (number | "ellipsis")[] = [];
 
-  if (currentPage > 3) {
+  pages.push(1);
+
+  if (currentPage <= 2) {
+    pages.push(2, 3);
     pages.push("ellipsis");
-  }
-
-  const start = Math.max(2, currentPage - 1);
-  const end = Math.min(totalPages - 1, currentPage + 1);
-
-  for (let i = start; i <= end; i++) {
-    pages.push(i);
-  }
-
-  if (currentPage < totalPages - 2) {
-    pages.push("ellipsis");
-  }
-
-  if (totalPages > 1) {
     pages.push(totalPages);
+    return pages;
   }
+
+  if (currentPage >= totalPages - 1) {
+    pages.push("ellipsis");
+    pages.push(totalPages - 2, totalPages - 1, totalPages);
+    return pages;
+  }
+
+  pages.push("ellipsis");
+  pages.push(currentPage - 1, currentPage, currentPage + 1);
+  pages.push("ellipsis");
+  pages.push(totalPages);
 
   return pages;
 };
