@@ -18,3 +18,13 @@ export {
   CarouselPrevious,
   CarouselNext,
 } from "./carousel";
+
+export {
+  Pagination,
+  PaginationContent,
+  PaginationLink,
+  PaginationItem,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from "./pagination";
