@@ -7,7 +7,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui";
-import { generatePageNumbers } from "@/utils/generatePageNumbers";
+import { generatePageNumbers } from "@/shared/utils/generatePageNumbers";
 
 interface AppPaginationProps {
   currentPage: number;

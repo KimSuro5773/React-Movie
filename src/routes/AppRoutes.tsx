@@ -1,7 +1,6 @@
-import { Home, NotFound, NowPlaying, Popular, TopRated, Upcoming } from "@/pages";
 import { Route, Routes } from "react-router-dom";
 import { PATHS } from "./paths";
-import { MovieDetail } from "@/pages/MovieDetail";
+import { Home, MovieDetail, NotFound, NowPlaying, Popular, TopRated, Upcoming } from "@/pages";
 
 function AppRoutes() {
   return (

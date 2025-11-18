@@ -1,16 +1,16 @@
-import { AppFooter, AppHeader } from "@/components/common";
+import { Footer, Header } from "@/components/layout";
 import AppRoutes from "@/routes/AppRoutes";
 
 function App() {
   return (
     <div className="page">
-      <AppHeader />
+      <Header />
 
       <main className="main_container">
         <AppRoutes />
       </main>
 
-      <AppFooter />
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,7 @@
-export { Home } from "./Home";
-export { NowPlaying } from "./NowPlaying";
-export { Popular } from "./Popular";
-export { TopRated } from "./TopRated";
-export { Upcoming } from "./Upcoming";
-export { NotFound } from "./NotFound";
+export { Home } from "./Home/Home";
+export { NowPlaying } from "./NowPlaying/NowPlaying";
+export { Popular } from "./Popular/Popular";
+export { TopRated } from "./TopRated/TopRated";
+export { Upcoming } from "./Upcoming/Upcoming";
+export { NotFound } from "./NotFound/NotFound";
+export { MovieDetail } from "./MovieDetail/MovieDetail";
