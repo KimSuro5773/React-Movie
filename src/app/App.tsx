@@ -1,5 +1,5 @@
-import { AppFooter, AppHeader } from "./components/common";
-import AppRoutes from "./routes/AppRoutes";
+import { AppFooter, AppHeader } from "@/components/common";
+import AppRoutes from "@/routes/AppRoutes";
 
 function App() {
   return (
