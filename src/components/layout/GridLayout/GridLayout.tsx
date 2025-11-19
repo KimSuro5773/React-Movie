@@ -2,6 +2,7 @@ import type { MovieListResponse } from "@/features/movies/types/movie";
 import { MovieCard } from "@/features/movies/components";
 import { AppPagination } from "@/components/common";
 import { TMDB_MAX_PAGE } from "@/features/movies/constants/tmdb";
+import { useEffect } from "react";
 
 interface GridLayoutProps {
   title: string;
@@ -10,6 +11,10 @@ interface GridLayoutProps {
 }
 
 function GridLayout({ title, data, onPageChange }: GridLayoutProps) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [data.page]);
+
   return (
     <div className="container mx-auto space-y-8 py-8">
       <div className="px-4">
