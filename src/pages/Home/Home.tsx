@@ -1,4 +1,5 @@
 import { MovieSection, MovieSectionSkeleton } from "@/features/movies/components";
+import { TMDB_MOVIE_SECTION_TITLE } from "@/features/movies/constants/tmdb";
 import {
   useNowPlayingMovies,
   usePopularMovies,
@@ -20,7 +21,7 @@ function Home() {
         <MovieSectionSkeleton />
       ) : (
         <MovieSection
-          titleHeader="현재 상영중"
+          titleHeader={TMDB_MOVIE_SECTION_TITLE.NOWPLAYING}
           linkPath={PATHS.NOW_PLAYING}
           movies={nowPlaying.results}
         />
@@ -30,7 +31,11 @@ function Home() {
       {!popular ? (
         <MovieSectionSkeleton />
       ) : (
-        <MovieSection titleHeader="TMDB 인기" linkPath={PATHS.POPULAR} movies={popular.results} />
+        <MovieSection
+          titleHeader={TMDB_MOVIE_SECTION_TITLE.POPULAR}
+          linkPath={PATHS.POPULAR}
+          movies={popular.results}
+        />
       )}
 
       {/* 최고 평점 */}
@@ -38,7 +43,7 @@ function Home() {
         <MovieSectionSkeleton />
       ) : (
         <MovieSection
-          titleHeader="최고 평점"
+          titleHeader={TMDB_MOVIE_SECTION_TITLE.TOPRATED}
           linkPath={PATHS.TOP_RATED}
           movies={topRated.results}
         />
@@ -48,7 +53,11 @@ function Home() {
       {!upcoming ? (
         <MovieSectionSkeleton />
       ) : (
-        <MovieSection titleHeader="개봉 예정" linkPath={PATHS.UPCOMING} movies={upcoming.results} />
+        <MovieSection
+          titleHeader={TMDB_MOVIE_SECTION_TITLE.UPCOMING}
+          linkPath={PATHS.UPCOMING}
+          movies={upcoming.results}
+        />
       )}
     </div>
   );

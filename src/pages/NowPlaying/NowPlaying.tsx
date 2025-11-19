@@ -1,4 +1,5 @@
 import { GridLayout, GridLayoutSkeleton } from "@/components/layout";
+import { TMDB_MOVIE_SECTION_TITLE } from "@/features/movies/constants/tmdb";
 import { useNowPlayingMovies } from "@/features/movies/hooks/useMovies";
 import { useState } from "react";
 
@@ -12,7 +13,9 @@ function NowPlaying() {
 
   if (!data) return null;
 
-  return <GridLayout title="현재 상영중" data={data} onPageChange={setPage} />;
+  return (
+    <GridLayout title={TMDB_MOVIE_SECTION_TITLE.NOWPLAYING} data={data} onPageChange={setPage} />
+  );
 }
 
 export { NowPlaying };
