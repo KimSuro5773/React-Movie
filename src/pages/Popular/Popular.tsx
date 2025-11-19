@@ -7,8 +7,6 @@ function Popular() {
   const [page, setPage] = useState(1);
   const { data, isLoading } = usePopularMovies(page);
 
-  console.log(data);
-
   if (isLoading) {
     return <GridLayoutSkeleton />;
   }
