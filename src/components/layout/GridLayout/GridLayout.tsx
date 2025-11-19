@@ -1,6 +1,7 @@
 import type { MovieListResponse } from "@/features/movies/types/movie";
 import { MovieCard } from "@/features/movies/components";
 import { AppPagination } from "@/components/common";
+import { TMDB_MAX_PAGE } from "@/features/movies/constants/tmdb";
 
 interface GridLayoutProps {
   title: string;
@@ -29,7 +30,7 @@ function GridLayout({ title, data, onPageChange }: GridLayoutProps) {
 
       <AppPagination
         currentPage={data.page}
-        totalPages={data.total_pages}
+        totalPages={Math.min(data.total_pages, TMDB_MAX_PAGE)}
         onPageChange={onPageChange}
       />
     </div>
