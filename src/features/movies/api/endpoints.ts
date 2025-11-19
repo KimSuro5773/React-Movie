@@ -6,5 +6,6 @@ export const END_POINTS = {
     UPCOMING: "/movie/upcoming",
   },
 
+  MOVIE_SEARCH: (query: string) => `/movie/${query}`,
   MOVIE_DETAIL: (movieId: number) => `/movie/${movieId}`,
 } as const;
