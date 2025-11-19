@@ -1,6 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import { PATHS } from "./paths";
-import { Home, MovieDetail, NotFound, NowPlaying, Popular, TopRated, Upcoming } from "@/pages";
+import {
+  Home,
+  MovieDetail,
+  MovieSearch,
+  NotFound,
+  NowPlaying,
+  Popular,
+  TopRated,
+  Upcoming,
+} from "@/pages";
 
 function AppRoutes() {
   return (
@@ -11,6 +20,7 @@ function AppRoutes() {
       <Route path={PATHS.TOP_RATED} element={<TopRated />} />
       <Route path={PATHS.UPCOMING} element={<Upcoming />} />
       <Route path={PATHS.MOVIE_DETAIL} element={<MovieDetail />} />
+      <Route path={PATHS.MOVIE_SEARCH} element={<MovieSearch />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

@@ -5,4 +5,5 @@ export const PATHS = {
   TOP_RATED: "/top-rated",
   UPCOMING: "/upcoming",
   MOVIE_DETAIL: "/movie/:id",
+  MOVIE_SEARCH: "/movie/search/:id",
 } as const;
