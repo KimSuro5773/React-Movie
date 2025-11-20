@@ -25,3 +25,33 @@ export interface MovieListItem {
   vote_average: number;
   vote_count: number;
 }
+
+export interface MovieDetailResponse {
+  backdrop_path: string | null;
+  genres: GenresItem[];
+  homepage: string | null;
+  id: number;
+  overview: string;
+  poster_path: string | null;
+  release_date: string;
+  runtime: number;
+  title: string;
+  vote_average: number;
+  vote_count: number;
+  videos?: Videos;
+}
+
+export interface GenresItem {
+  id: number;
+  name: string;
+}
+
+export interface Videos {
+  results: VideosItem[];
+}
+
+export interface VideosItem {
+  key: string;
+  site: string;
+  type: string;
+}
