@@ -5,3 +5,5 @@ export { MovieCarousel } from "./MovieCarousel/MovieCarousel";
 
 export { MovieSection } from "./MovieSection/MovieSection";
 export { MovieSectionSkeleton } from "./MovieSection/MovieSectionSkeleton";
+
+export { MoviePoster } from "./MoviePoster/MoviePoster";
