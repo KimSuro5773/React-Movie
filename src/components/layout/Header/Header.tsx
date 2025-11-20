@@ -2,10 +2,23 @@ import { Menu, Search } from "lucide-react";
 import { Button, Input } from "@/components/ui";
 import Slider from "./Slider";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Header() {
   const [isSliderOpen, setIsSliderOpen] = useState<boolean>(false);
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const navigate = useNavigate();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/movie/search/${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <>
@@ -22,12 +35,18 @@ function Header() {
               <Search className="w-4 h-4 text-muted-foreground md:w-5 md:h-5" />
             </div>
 
-            <div className="flex flex-1">
-              <Input type="text" placeholder="검색" className="flex-1 pl-10 text-sm md:text-base" />
+            <form onSubmit={handleSearch} className="flex flex-1">
+              <Input
+                type="text"
+                placeholder="검색"
+                value={searchQuery}
+                onChange={handleInputChange}
+                className="flex-1 pl-10 text-sm md:text-base"
+              />
               <Button type="submit" variant="outline" className="ml-2 hidden sm:flex">
                 검색
               </Button>
-            </div>
+            </form>
           </div>
 
           {/* MenuButton */}
