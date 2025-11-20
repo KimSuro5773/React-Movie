@@ -1,6 +1,7 @@
 import {
   getNowPlayingMovies,
   getPopularMovies,
+  getSearchMovies,
   getTopRatedMovies,
   getUpcomingMovies,
 } from "./movieApi";
@@ -120,6 +121,30 @@ describe("movieApi TEST", () => {
       });
 
       expect(result).toStrictEqual(mockMovieListResponse);
+    });
+  });
+
+  describe("getSearchMovies TEST", () => {
+    test("검색어에 맞는 영화 목록을 반환한다.", async () => {
+      vi.mocked(client.get).mockResolvedValue({ data: mockMovieListResponse });
+
+      const result = await getSearchMovies("어벤져스", 1);
+
+      expect(client.get).toHaveBeenCalledWith(END_POINTS.MOVIES.SEARCH, {
+        params: { query: "어벤져스", page: 1 },
+      });
+
+      expect(result).toStrictEqual(mockMovieListResponse);
+    });
+
+    test("page를 지정하지 않으면 기본값 1로 요청한다.", async () => {
+      vi.mocked(client.get).mockResolvedValue({ data: mockMovieListResponse });
+
+      await getSearchMovies("테스트");
+
+      expect(client.get).toHaveBeenCalledWith(END_POINTS.MOVIES.SEARCH, {
+        params: { query: "테스트", page: 1 },
+      });
     });
   });
 });
