@@ -30,6 +30,7 @@ function GridLayout({ title, data, onPageChange }: GridLayoutProps) {
             {data.results.map((movie) => (
               <MovieCard
                 key={movie.id}
+                id={movie.id}
                 title={movie.title}
                 vote_average={movie.vote_average}
                 poster_path={movie.poster_path}

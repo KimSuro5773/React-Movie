@@ -20,6 +20,7 @@ function MovieCarousel({ movies }: MovieCarouselProps) {
           {movies.map((movie) => (
             <CarouselItem key={movie.id} className="basis-1/2 md:basis-1/4 lg:basis-1/6">
               <MovieCard
+                id={movie.id}
                 title={movie.title}
                 vote_average={movie.vote_average}
                 poster_path={movie.poster_path}
