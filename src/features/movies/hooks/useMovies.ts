@@ -39,6 +39,7 @@ export const useUpcomingMovies = (page = 1) => {
 export const useSearchMovies = (query: string, page = 1) => {
   return useQuery({
     queryKey: [...QUERY_KEYS.MOVIES.SEARCH, query, page],
-    queryFn: () => getSearchMovies(query),
+    queryFn: () => getSearchMovies(query, page),
+    enabled: query.length > 0,
   });
 };
