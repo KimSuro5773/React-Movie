@@ -3,6 +3,7 @@ import { MovieCard } from "@/features/movies/components";
 import { AppPagination } from "@/components/common";
 import { TMDB_MAX_PAGE } from "@/features/movies/constants/tmdb";
 import { useEffect } from "react";
+import { NoResults } from "@components/layout/NoResults/NoResults";
 
 interface GridLayoutProps {
   title: string;
@@ -21,17 +22,23 @@ function GridLayout({ title, data, onPageChange }: GridLayoutProps) {
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">{title}</h1>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 px-4">
-        {data.results.map((movie) => (
-          <MovieCard
-            key={movie.id}
-            title={movie.title}
-            vote_average={movie.vote_average}
-            poster_path={movie.poster_path}
-            release_date={movie.release_date}
-          />
-        ))}
-      </div>
+      {data.results.length === 0 ? (
+        <NoResults />
+      ) : (
+        <>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 px-4">
+            {data.results.map((movie) => (
+              <MovieCard
+                key={movie.id}
+                title={movie.title}
+                vote_average={movie.vote_average}
+                poster_path={movie.poster_path}
+                release_date={movie.release_date}
+              />
+            ))}
+          </div>
+        </>
+      )}
 
       <AppPagination
         currentPage={data.page}
