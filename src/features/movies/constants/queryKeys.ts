@@ -4,5 +4,6 @@ export const QUERY_KEYS = {
     POPULAR: ["movies", "popular"],
     TOP_RATED: ["movies", "top-rated"],
     UPCOMING: ["movies", "upcoming"],
+    SEARCH: ["movies", "search"],
   },
 };

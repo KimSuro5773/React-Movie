@@ -4,8 +4,8 @@ export const END_POINTS = {
     POPULAR: "/movie/popular",
     TOP_RATED: "/movie/top_rated",
     UPCOMING: "/movie/upcoming",
+    SEARCH: "/search/movie",
   },
 
-  MOVIE_SEARCH: (query: string) => `/movie/${query}`,
   MOVIE_DETAIL: (movieId: number) => `/movie/${movieId}`,
 } as const;
