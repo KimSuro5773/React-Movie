@@ -1,4 +1,5 @@
 import {
+  getMovieDetail,
   getNowPlayingMovies,
   getPopularMovies,
   getSearchMovies,
@@ -41,5 +42,13 @@ export const useSearchMovies = (query: string, page = 1) => {
     queryKey: [...QUERY_KEYS.MOVIES.SEARCH, query, page],
     queryFn: () => getSearchMovies(query, page),
     enabled: query.length > 0,
+  });
+};
+
+export const useMovieDetail = (movie_id: number) => {
+  return useQuery({
+    queryKey: [...QUERY_KEYS.MOVIES.DETAIL, movie_id],
+    queryFn: () => getMovieDetail(movie_id),
+    enabled: !!movie_id,
   });
 };

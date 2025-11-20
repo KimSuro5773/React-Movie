@@ -1,4 +1,4 @@
-import type { MovieListResponse } from "@/features/movies/types/movie";
+import type { MovieDetailResponse, MovieListResponse } from "@/features/movies/types/movie";
 import { END_POINTS } from "./endpoints";
 import { client } from "@/lib/api/client";
 
@@ -33,6 +33,14 @@ export const getUpcomingMovies = async (page = 1): Promise<MovieListResponse> =>
 export const getSearchMovies = async (query: string, page = 1): Promise<MovieListResponse> => {
   const { data } = await client.get(END_POINTS.MOVIES.SEARCH, {
     params: { query, page },
+  });
+
+  return data;
+};
+
+export const getMovieDetail = async (movie_id: number): Promise<MovieDetailResponse> => {
+  const { data } = await client.get(END_POINTS.MOVIE_DETAIL(movie_id), {
+    params: { append_to_response: "videos" },
   });
 
   return data;
