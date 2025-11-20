@@ -29,3 +29,11 @@ export const getUpcomingMovies = async (page = 1): Promise<MovieListResponse> =>
   });
   return data;
 };
+
+export const getSearchMovies = async (query: string, page = 1): Promise<MovieListResponse> => {
+  const { data } = await client.get(END_POINTS.MOVIES.SEARCH, {
+    params: { query, page },
+  });
+
+  return data;
+};

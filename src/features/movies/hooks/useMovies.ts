@@ -1,6 +1,7 @@
 import {
   getNowPlayingMovies,
   getPopularMovies,
+  getSearchMovies,
   getTopRatedMovies,
   getUpcomingMovies,
 } from "@/features/movies/api/movieApi";
@@ -32,5 +33,12 @@ export const useUpcomingMovies = (page = 1) => {
   return useQuery({
     queryKey: [...QUERY_KEYS.MOVIES.UPCOMING, page],
     queryFn: () => getUpcomingMovies(page),
+  });
+};
+
+export const useSearchMovies = (query: string, page = 1) => {
+  return useQuery({
+    queryKey: [...QUERY_KEYS.MOVIES.SEARCH, query, page],
+    queryFn: () => getSearchMovies(query),
   });
 };
