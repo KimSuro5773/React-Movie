@@ -9,8 +9,10 @@ export { MovieSectionSkeleton } from "./MovieSection/MovieSectionSkeleton";
 export { MoviePoster } from "./MoviePoster/MoviePoster";
 
 export { MovieDetailHero } from "./MovieDetailHero/MovieDetailHero";
+export { MovieDetailHeroSkeleton } from "./MovieDetailHero/MovieDetailHeroSkeleton";
 
 export { MovieTrailer } from "./MovieTrailer/MovieTrailer";
+export { MovieTrailerSkeleton } from "./MovieTrailer/MovieTrailerSkeleton";
 
 export { MovieRecommendations } from "./MovieRecommendations/MovieRecommendations";
 

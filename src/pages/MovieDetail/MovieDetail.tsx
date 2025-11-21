@@ -6,6 +6,7 @@ import {
 } from "@/features/movies/components";
 import { useMovieDetail } from "@/features/movies/hooks/useMovies";
 import { useParams } from "react-router-dom";
+import { MovieDetailSkeleton } from "./MovieDetailSkeleton";
 
 function MovieDetail() {
   const { id } = useParams<{ id: string }>();
@@ -13,7 +14,7 @@ function MovieDetail() {
 
   const { data: movie, isLoading } = useMovieDetail(movieId);
 
-  if (isLoading) return <div>로딩중</div>;
+  if (isLoading) return <MovieDetailSkeleton />;
   if (!movie) return <div>영화를 찾을 수 없습니다.</div>;
 
   return (
