@@ -6,5 +6,6 @@ export const QUERY_KEYS = {
     UPCOMING: ["movies", "upcoming"],
     SEARCH: ["movies", "search"],
     DETAIL: ["movie", "detail"],
+    RECOMMENDATIONS: ["movie", "recommendations"],
   },
 };

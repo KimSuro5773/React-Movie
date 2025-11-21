@@ -45,3 +45,14 @@ export const getMovieDetail = async (movie_id: number): Promise<MovieDetailRespo
 
   return data;
 };
+
+export const getMovieRecommendations = async (
+  movie_id: number,
+  page = 1,
+): Promise<MovieListResponse> => {
+  const { data } = await client.get(END_POINTS.MOVIE_RECOMMENDATIONS(movie_id), {
+    params: { page },
+  });
+
+  return data;
+};
