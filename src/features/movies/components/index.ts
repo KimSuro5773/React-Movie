@@ -7,3 +7,5 @@ export { MovieSection } from "./MovieSection/MovieSection";
 export { MovieSectionSkeleton } from "./MovieSection/MovieSectionSkeleton";
 
 export { MoviePoster } from "./MoviePoster/MoviePoster";
+
+export { MovieDetailHero } from "./MovieDetailHero/MovieDetailHero";
