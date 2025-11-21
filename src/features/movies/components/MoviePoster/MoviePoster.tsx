@@ -1,16 +1,21 @@
 import { getPosterUrl } from "@features/movies/utils";
 import { ImageOff } from "lucide-react";
+import type { API_CONFIG } from "@/lib/api/config";
+
+type PosterSize = keyof typeof API_CONFIG.POSTER_SIZES;
 
 type MoviePosterProps = {
   poster_path: string | null;
   title: string;
+  size?: PosterSize;
+  className?: string;
 };
 
-function MoviePoster({ poster_path, title }: MoviePosterProps) {
-  const imgPath = getPosterUrl(poster_path);
+function MoviePoster({ poster_path, title, size = "MEDIUM", className = "" }: MoviePosterProps) {
+  const imgPath = getPosterUrl(poster_path, size);
 
   return (
-    <div className="relative aspect-3/4 overflow-hidden">
+    <div className={`relative aspect-3/4 overflow-hidden ${className}`}>
       {imgPath ? (
         <img
           src={imgPath}
