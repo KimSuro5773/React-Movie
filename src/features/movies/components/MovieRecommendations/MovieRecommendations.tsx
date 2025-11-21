@@ -1,5 +1,6 @@
 import { useMovieRecommendations } from "@/features/movies/hooks/useMovies";
 import { MovieCarousel } from "../MovieCarousel/MovieCarousel";
+import { MovieSectionSkeleton } from "../MovieSection/MovieSectionSkeleton";
 
 interface MovieRecommendationsProps {
   movieId: number;
@@ -8,7 +9,7 @@ interface MovieRecommendationsProps {
 function MovieRecommendations({ movieId }: MovieRecommendationsProps) {
   const { data, isLoading } = useMovieRecommendations(movieId);
 
-  if (isLoading) return <div>로딩 중...</div>;
+  if (isLoading) return <MovieSectionSkeleton />;
   if (!data || data.results.length === 0) return null;
 
   return (
