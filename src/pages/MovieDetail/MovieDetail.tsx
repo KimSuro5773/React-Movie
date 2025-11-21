@@ -1,4 +1,4 @@
-import { MovieDetailHero, MovieTrailer } from "@/features/movies/components";
+import { MovieDetailHero, MovieRecommendations, MovieTrailer } from "@/features/movies/components";
 import { useMovieDetail } from "@/features/movies/hooks/useMovies";
 import { useParams } from "react-router-dom";
 
@@ -15,6 +15,7 @@ function MovieDetail() {
     <div className="min-h-screen">
       <MovieDetailHero movie={movie} />
       <MovieTrailer videos={movie.videos} title={movie.title} />
+      <MovieRecommendations movieId={movie.id} />
     </div>
   );
 }

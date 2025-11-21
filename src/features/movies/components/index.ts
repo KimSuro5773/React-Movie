@@ -11,3 +11,5 @@ export { MoviePoster } from "./MoviePoster/MoviePoster";
 export { MovieDetailHero } from "./MovieDetailHero/MovieDetailHero";
 
 export { MovieTrailer } from "./MovieTrailer/MovieTrailer";
+
+export { MovieRecommendations } from "./MovieRecommendations/MovieRecommendations";
