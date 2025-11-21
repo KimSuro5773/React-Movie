@@ -13,3 +13,5 @@ export { MovieDetailHero } from "./MovieDetailHero/MovieDetailHero";
 export { MovieTrailer } from "./MovieTrailer/MovieTrailer";
 
 export { MovieRecommendations } from "./MovieRecommendations/MovieRecommendations";
+
+export { MovieSimilar } from "./MovieSimilar/MovieSimilar";
