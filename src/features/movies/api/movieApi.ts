@@ -56,3 +56,11 @@ export const getMovieRecommendations = async (
 
   return data;
 };
+
+export const getMovieSimilar = async (movie_id: number, page = 1): Promise<MovieListResponse> => {
+  const { data } = await client.get(END_POINTS.MOVIE_SIMILAR(movie_id), {
+    params: { page },
+  });
+
+  return data;
+};

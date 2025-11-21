@@ -9,4 +9,5 @@ export const END_POINTS = {
 
   MOVIE_DETAIL: (movieId: number) => `/movie/${movieId}`,
   MOVIE_RECOMMENDATIONS: (movieId: number) => `/movie/${movieId}/recommendations`,
+  MOVIE_SIMILAR: (movieId: number) => `/movie/${movieId}/similar`,
 } as const;

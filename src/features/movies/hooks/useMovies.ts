@@ -1,6 +1,7 @@
 import {
   getMovieDetail,
   getMovieRecommendations,
+  getMovieSimilar,
   getNowPlayingMovies,
   getPopularMovies,
   getSearchMovies,
@@ -58,5 +59,14 @@ export const useMovieRecommendations = (movie_id: number, page = 1) => {
   return useQuery({
     queryKey: [...QUERY_KEYS.MOVIES.RECOMMENDATIONS, movie_id, page],
     queryFn: () => getMovieRecommendations(movie_id, page),
+    enabled: !!movie_id,
+  });
+};
+
+export const useMovieSimilar = (movie_id: number, page = 1) => {
+  return useQuery({
+    queryKey: [...QUERY_KEYS.MOVIES.SIMILAR, movie_id, page],
+    queryFn: () => getMovieSimilar(movie_id, page),
+    enabled: !!movie_id,
   });
 };
